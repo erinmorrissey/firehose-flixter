@@ -1,2 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+.navbar-brand {
+  height:65px;
+  font-size:24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-toggle {
+  margin-top:15px;
+}
