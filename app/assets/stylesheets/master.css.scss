@@ -2,16 +2,23 @@
 @import "bootstrap";
 
 
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Suez+One';
+
 
 body {
   padding-top:50px;
+  font-family:'Open Sans', Helvetica, sans-serif;
 }
 
 .navbar-brand {
   height:65px;
-  font-size:24px;
+  font-size:30px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+a.navbar-brand {
+  font-family: 'Suez One', Helvetica, sans-serif;
 }
 
 .navbar-nav > li > a {
@@ -21,4 +28,23 @@ body {
 
 .navbar-toggle {
   margin-top:15px;
+}
+
+.jumbotron {
+  padding-top:70px;
+  background: url(roses_bkgnd.jpg) no-repeat center center fixed;
+  background-color:rgb(11, 29, 44);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  background:rgba(255,255,255,0.3);
+}
+
+.btn-pink {
+  color:#FFFFFF;
+  background-color:#e78b90;
 }
