@@ -64,8 +64,14 @@ a.navbar-brand {
 
 .jumbotron h1 {
   font-family: 'Suez One', Helvetica, sans-serif;
-  font-size:50px;
+  font-size:40px;
   color:#444444;
+}
+
+@media (min-width: 768px) {
+  .jumbotron h1 {
+    font-size:50px;
+  }
 }
 
 .btn-pink {
