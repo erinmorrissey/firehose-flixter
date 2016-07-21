@@ -30,6 +30,19 @@ a.navbar-brand {
   padding-bottom: 20px;
 }
 
+@media (min-width: 768px) {
+  .navbar-nav > li > a#seeall {
+    background-color:#F6E6E6;
+    padding:6px 12px;
+    margin:16px;
+    border-radius:4px;
+  }
+  .navbar-nav > li > a#seeall:hover {
+    color:#777;
+    background-color:#F4DCDD;
+  }
+}
+
 .navbar-toggle {
   margin-top:15px;
 }
