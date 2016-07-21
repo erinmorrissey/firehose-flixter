@@ -29,7 +29,12 @@
           <li><a href="#" id="seeall">See all Courses</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Sign In</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -42,7 +47,7 @@
   <% if alert.present? %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-  
+
 
 
     <%= yield %>
