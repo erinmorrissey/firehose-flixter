@@ -86,8 +86,24 @@ a.navbar-brand {
   border:1px solid #7F1D4E;
 }
 
+.btn-pink:link {
+  color:#FFFFFF;
+}
+
+.btn-pink:visited {
+  color:#FFFFFF;
+}
+
 .btn-pink:hover {
   background-color: #7F1D4E;
+  color:#FFFFFF;
+}
+
+.btn-pink:active {
+  color:#FFFFFF;
+}
+
+.btn-pink:focus {
   color:#FFFFFF;
 }
 
