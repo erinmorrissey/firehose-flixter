@@ -22,7 +22,7 @@ html {
 body {
   padding-top:50px;
   font-family:'Open Sans', Helvetica, sans-serif;
-  color:#444444;
+  color:#666666;
   /* Margin bottom same as footer height */
   margin-bottom:$footer-height;
 }
@@ -62,7 +62,11 @@ a.navbar-brand {
 }
 
 .navbar-default .navbar-brand {
-    color:#D29093;
+  color:#D29093;
+}
+
+.navbar-default .navbar-brand:hover {
+  color:#F4DCDD;
 }
 
 .navbar-nav > li > a {
@@ -161,6 +165,12 @@ a.navbar-brand {
   font-family: 'Suez One', Helvetica, sans-serif;
   color:#D29093;
   margin-bottom:40px;
+}
+
+.main-box h1#callout {
+  font-size:44px;
+  text-transform:lowercase;
+  font-family:'Open Sans', Helvetica, sans-serif;
 }
 
 form .input {
