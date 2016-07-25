@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="main-box">
+
+      <h1 class="text-center"><%= @course.title %></h1>
+
+      <br />
+
+      <div class="col-sm-4 col-xs-12 text-center">
+        <span class="label label-default">
+          <%= number_to_currency @course.cost %>
+        </span>
+
+        <% if current_user && current_user == @course.user %>
+          <br /><br />
+          <%= link_to 'Administer this Course', instructor_course_path(@course), class: 'btn btn-yellow btn-large' %>
+        <% end %>
+      </div>
+
+      <div class="col-sm-8 col-xs-12">
+        <%= @course.description %>
+      </div>
+
+    </div>
+  </div>
+</div>
