@@ -57,6 +57,14 @@ Flixter::Application.routes.draw do
   #     resources :products
   #   end
   namespace :instructor do
+    # indicates we're dealing with resources for sections, 
+    # but don't hook up any actions to the route (note empty []).
+    # makes it so the URLs include the section_id, but not 
+    # the course_id, which now prevents a user from adding lessons 
+    # to a mismatched course & section via the URL pattern
+    resources :sections, only: [] do
+      resources :lessons, only: [:new, :create]
+    end
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:new, :create]
     end
