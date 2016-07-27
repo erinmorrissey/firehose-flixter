@@ -63,3 +63,6 @@ gem 'carrierwave', '0.11.2'
 # Use figaro & fog gems for Heroku/carrierwave
 gem 'figaro'
 gem 'fog'
+
+# Use MiniMagick for image resizing
+gem 'mini_magick', '~> 4.3.1'
