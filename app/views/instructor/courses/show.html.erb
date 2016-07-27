@@ -5,6 +5,7 @@
       <h1>Your Courses</h1>
 
       <h2><%= current_course.title %></h2>
+      <%= image_tag current_course.image, class: 'img-responsive' %>
       <br />
       <%= link_to 'Preview as Student', course_path(current_course), class: 'btn btn-yellow pull-right' %>
       <%= link_to 'Add a New Section', new_instructor_course_section_path(current_course), class: 'btn btn-yellow btn-lg' %>

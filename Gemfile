@@ -56,3 +56,10 @@ gem 'simple_form'
 
 # Use Devise gem for user authentication
 gem 'devise', '>= 3.2.4'
+
+# Use carrierwave for image uploading
+gem 'carrierwave', '0.11.2'
+
+# Use figaro & fog gems for Heroku/carrierwave
+gem 'figaro'
+gem 'fog'
