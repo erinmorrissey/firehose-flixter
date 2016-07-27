@@ -32,10 +32,12 @@
             <h3><%= section.title %></h3>
             
             <% section.lessons.each do |lesson| %>
-              <div class="col-sm-6 col-xs-12 lesson">
-                <h4><%= lesson.title %></h4>
-                <h5><%= lesson.subtitle %></h5>
-              </div>
+              <%= link_to lesson_path(lesson) do %>
+                <div class="col-sm-6 col-xs-12 lesson">
+                  <h4><%= lesson.title %></h4>
+                  <h5><%= lesson.subtitle %></h5>
+                </div>
+              <% end %>
             <% end %>
             
           </div>
