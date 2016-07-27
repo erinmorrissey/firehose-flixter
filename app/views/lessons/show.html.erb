@@ -4,7 +4,8 @@
 
       <h1><%= current_lesson.title %></h1>
       <h2><%= current_lesson.subtitle %></h2>
-      <p>video will go here</p>
+
+      <%= link_to 'Video', current_lesson.video.to_s %>
 
     </div>
   </div>
