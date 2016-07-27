@@ -66,3 +66,6 @@ gem 'fog'
 
 # Use MiniMagick for image resizing
 gem 'mini_magick', '~> 4.3.1'
+
+# Use carrierwave-aws to handle video uploading large file size issues
+gem 'carrierwave-aws'
