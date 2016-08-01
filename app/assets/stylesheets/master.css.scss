@@ -214,3 +214,40 @@ form .input {
 #video-embed {
   height:100%;
 }
+
+.section {
+  border: 1px solid;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding:20px;
+  margin-bottom:40px;
+}
+
+.section h3 {
+  font-family: 'Suez One', Helvetica, sans-serif;
+  font-size:30px;
+  margin-bottom:20px;
+  color:#D29093;
+}
+
+.lesson {
+  background-color:#F6E6E6;
+  padding:20px;
+  margin:10px;
+  height:135px;
+}
+
+.lesson:hover {
+  background-color:#F4DCDD;
+}
+
+.lesson h4, .lesson h5 {
+  color:#666666;
+}
+
+.lesson h4 {
+  font-size:24px;
+}
+
+.lesson hr {
+  border-top: 2px solid #FFFFFF;
+}
