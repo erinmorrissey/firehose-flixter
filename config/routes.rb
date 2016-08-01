@@ -15,7 +15,10 @@ Flixter::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :courses, only: [:index, :show]
+  resources :courses, only: [:index, :show] do
+    resources :enrollments, only: :create
+  end
+  
   resources :lessons, only: [:show]
 
   # Example resource route with options:
