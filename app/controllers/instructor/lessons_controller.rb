@@ -2,8 +2,9 @@ class Instructor::LessonsController < ApplicationController
   # authenticate_user! is a helper method provided by devise gem
   # ensures user is a logged-in user before running any actions
   before_action :authenticate_user!
-  # triggers private method defined below
-  before_action :require_authorization_for_current_section
+  # triggers private methods defined below
+  before_action :require_authorization_for_current_section, only: [:new, :create]
+  before_action :require_authorization_for_current_lesson, only: [:update]
 
   def new
     # first
@@ -34,8 +35,29 @@ class Instructor::LessonsController < ApplicationController
     redirect_to instructor_course_path(current_section.course)
   end
 
+  # this method is for the drag-and-drop lesson reordering
+  # this exposes an endpoint that will allow us to trigger a data update to a 
+  #    lesson (ex. update the value of :row_order_position)
+  # b/c of the route associated with instructor/lessons#update, it means
+  # our app is listening for PUT requests to the instructor_lesson_path, 
+  # which will trigger this update action
+  def update
+    current_lesson.update_attributes(lesson_params)
+    render text: 'updated!'
+  end
 
   private
+
+  # same idea as require_auth below, but matches lesson creator to current_user
+  def require_authorization_for_current_lesson
+    if current_lesson.section.course.user != current_user
+      return render text: 'Unathorized', status: :unauthorized
+    end
+  end
+
+  def current_lesson
+    @current_lesson ||= Lesson.find(params[:id])
+  end
 
   # ensures logged-in user id (current_user) matches id of user who created course
   def require_authorization_for_current_section
@@ -70,6 +92,6 @@ class Instructor::LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:title, :subtitle, :video)
+    params.require(:lesson).permit(:title, :subtitle, :video, :row_order_position)
   end
 end
