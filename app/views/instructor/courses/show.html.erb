@@ -16,6 +16,20 @@
             }
           });
         });
+
+        $(function() {
+          $('.sections').sortable({
+            update: function(event, ui) {
+              $.ajax({
+                type: 'PUT',
+                url: ui.item.data('update-url'),
+                dataType: 'json',
+                data: { section: { row_order_position: ui.item.index() } }
+              });
+              // alert("Section Id: " + ui.item.data('item-id') + " Update Url: " + ui.item.data('update-url') + " Index: " + ui.item.index());
+            }
+          });
+        });
       </script>
       
       <h1>Your Courses</h1>
@@ -26,9 +40,9 @@
       <%= link_to 'Preview as Student', course_path(current_course), class: 'btn btn-yellow pull-right' %>
       <%= link_to 'Add a New Section', new_instructor_course_section_path(current_course), class: 'btn btn-yellow btn-lg' %>
 
-      <ul>
+      <ul class="sections">
         <% current_course.sections.rank(:row_order).each do |section| %>
-          <li>
+          <li data-item-id=<%= section.id %> data-update-url=<%= instructor_section_path(section) %>>
             <%= section.title %>
             <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-yellow btn-xs pull-right' %>
             <ul class="lessons">

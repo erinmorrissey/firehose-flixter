@@ -61,12 +61,15 @@ Flixter::Application.routes.draw do
   #     resources :products
   #   end
   namespace :instructor do
+    # these two are for the drag-and-drop AJAX POST request routes
+    resources :lessons, only: [:update]
+    resources :sections, only: [:update]
+
     # indicates we're dealing with resources for sections, 
     # but don't hook up any actions to the route (note empty []).
     # makes it so the URLs include the section_id, but not 
     # the course_id, which now prevents a user from adding lessons 
     # to a mismatched course & section via the URL pattern
-    resources :lessons, only: [:update]
     resources :sections, only: [] do
       resources :lessons, only: [:new, :create]
     end
