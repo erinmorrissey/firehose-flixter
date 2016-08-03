@@ -42,13 +42,19 @@
 
       <ul class="sections">
         <% current_course.sections.rank(:row_order).each do |section| %>
-          <li data-item-id=<%= section.id %> data-update-url=<%= instructor_section_path(section) %>>
-            <%= section.title %>
-            <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-yellow btn-xs pull-right' %>
+          <li data-item-id=<%= section.id %> data-update-url=<%= instructor_section_path(section) %> class="sections-li">
+            <div class="sections-title">
+              <span class="glyphicon glyphicon-list"></span>
+              <%= section.title %>
+              <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-yellow btn-xs pull-right' %>
+            </div>
             <ul class="lessons">
               <% section.lessons.rank(:row_order).each do |lesson| %>
                 <li data-item-id=<%= lesson.id %> data-update-url=<%= instructor_lesson_path(lesson) %>>
-                  <%= lesson.title %> - <%= lesson.subtitle %>
+                  <span class="glyphicon glyphicon-list"></span>
+                  <h4 class="text-center"><%= lesson.title %></h4>
+                  <hr />
+                  <h5 class="text-center"><%= lesson.subtitle %></h5>
                 </li>
               <% end %>
             </ul>
