@@ -7,6 +7,9 @@ class Instructor::CoursesController < ApplicationController
     #    ^ removed b/c we refactored @course into .current_course
     #      and now the view calls .current_course, so having it here
     #      would be redundant
+    @section = Section.new
+    #    ^ added when decided to move the new section form into a modal window
+    #      on the instructor/courses#show page
   end
 
   def new
