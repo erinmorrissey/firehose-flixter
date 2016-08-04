@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="main-box">
+
+      <h1>Dashboard</h1>
+
+      <!-- begin LEARNING -->
+      <h1 class="text-center" id="callout">What I'm Learning</h1>
+
+      <hr />
+
+      <% current_user.enrolled_courses.each do |course| %>
+
+        <h2 class="text-center">
+          <%= link_to course.title, course_path(course) %>
+        </h2>
+        <%= image_tag course.image, class: 'img-responsive' %>
+        <br />
+        <div class="col-sm-8 col-xs-12">
+          <%= course.description %>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center">
+          <%= link_to 'More Details...', course_path(course), class: 'btn btn-pink btn-large' %>
+        </div>
+
+        <br class="clr" />
+
+      <% end %>
+      <!-- end LEARNING -->
+
+
+
+      <!-- begin TEACHING -->
+      <h1 class="text-center" id="callout">What I'm Teaching</h1>
+
+      <hr />
+
+      <% current_user.courses.each do |course| %>
+
+        <h2 class="text-center">
+          <%= link_to course.title, course_path(course) %>
+        </h2>
+        <%= image_tag course.image, class: 'img-responsive' %>
+        <br />
+        <div class="col-sm-8 col-xs-12">
+          <%= course.description %>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center">
+          <%= link_to 'More Details...', course_path(course), class: 'btn btn-pink btn-large' %>
+        </div>
+
+        <br class="clr" />
+
+      <% end %>
+      <!-- end TEACHING -->
+
+
+    </div>
+  </div>
+</div>

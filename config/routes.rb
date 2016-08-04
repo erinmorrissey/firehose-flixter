@@ -3,6 +3,13 @@ Flixter::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # Example of singleton route - it's used to represent a resource that only
+  # exists once in it's given context
+  # note we use 'resource', no 's', and dashboard
+  # is singular (though it will still know how to connect to the dashboards
+  # controller...?)
+  resource :dashboard, only: [:show]
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'static_pages#index'
