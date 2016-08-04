@@ -159,6 +159,15 @@ a.navbar-brand {
   }
 }
 
+.btn-space {
+  margin:10px;
+}
+
+.btn-lesson {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
 .btn-pink {
   color:#FFFFFF;
   background-color:#993366;
@@ -239,6 +248,7 @@ a.navbar-brand {
   font-size:44px;
   text-transform:lowercase;
   font-family:'Open Sans', Helvetica, sans-serif;
+  margin:60px 0;
 }
 
 form .input {
@@ -256,14 +266,52 @@ form .input {
   height:100%;
 }
 
+h2.course-title {
+  font-family: 'Suez One', Helvetica, sans-serif;
+  font-size:36px;
+  margin-top:100px;
+}
+
+h2.course-title a {
+  color:#D29093;
+}
+
+h2.course-title a:hover {
+  color:#F4DCDD;
+  text-decoration: none;
+}
+
+h2.course-title a:active {
+  text-decoration: none;
+}
+
+.courseimg {
+  margin:30px auto;
+}
+
+.course-desc {
+  margin-bottom:30px;
+}
+
+.cost {
+  font-size:14px;
+}
+
 .section {
   border: 1px solid;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding:20px;
-  margin-bottom:40px;
+  margin: 30px 0;
 }
 
 .section h3 {
+  font-family: 'Suez One', Helvetica, sans-serif;
+  font-size:30px;
+  margin-bottom:20px;
+  color:#D29093;
+}
+
+h3.sectiontitle {
   font-family: 'Suez One', Helvetica, sans-serif;
   font-size:30px;
   margin-bottom:20px;
@@ -313,6 +361,8 @@ form .input {
 
 .sections-title {
   font-size:25px;
+/*  font-family:'Suez One', Helvetica, sans-serif;
+  color:#D29093;*/
 }
 
 .lessons li {

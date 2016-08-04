@@ -43,16 +43,20 @@
         });
       </script>
       
-      <h1>Your Courses</h1>
+      <h1>Manage this Course</h1>
 
-      <h2><%= current_course.title %></h2>
-      <%= image_tag current_course.image, class: 'img-responsive' %>
+      <h1 class="text-center"><%= current_course.title %></h1>
+      <%= image_tag current_course.image, class: 'img-responsive courseimg' %>
       <br />
-      <%= link_to 'Preview as Student', course_path(current_course), class: 'btn btn-yellow pull-right' %>
-      <!-- Modal trigger button: Add Section -->
-      <button type="button" class="btn btn-yellow btn-lg" data-toggle="modal" data-target="#modalAddSection">
-        Add a New Section
-      </button>
+
+      <div class="text-center">
+        <!-- Modal trigger button: Add Section -->
+        <button type="button" class="btn btn-yellow btn-lg btn-space" data-toggle="modal" data-target="#modalAddSection">
+          Add a New Section
+        </button>
+        &nbsp;
+        <%= link_to 'Preview as Student', course_path(current_course), class: 'btn btn-pink btn-lg btn-space' %>
+      </div>
 
       <ul class="sections">
         <% current_course.sections.rank(:row_order).each do |section| %>
@@ -62,7 +66,7 @@
               <%= section.title %>
               <!-- Modal trigger button: Add Lesson -->
               <button type="button" class="btn btn-yellow btn-xs pull-right new-lesson-button" data-toggle="modal" data-target="#modalAddLesson" data-lesson-url=<%= instructor_section_lessons_path(section) %>>
-                New Lesson
+                Add Lesson
               </button>
             </div>
             <ul class="lessons">
@@ -99,7 +103,7 @@
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <%= f.submit "Add Section", class: 'btn btn-pink' %>
+              <%= f.submit "Add Section", class: 'btn btn-yellow' %>
           </div>
         <% end %>
     </div>
@@ -124,7 +128,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit "Add Lesson", class: 'btn btn-pink' %>
+          <%= f.submit "Add Lesson", class: 'btn btn-yellow' %>
         </div>
       <% end %>
     </div>

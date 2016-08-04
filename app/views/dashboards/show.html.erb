@@ -2,7 +2,7 @@
   <div class="row">
     <div class="main-box">
 
-      <h1>Dashboard</h1>
+      <h1>Course Dashboard</h1>
 
       <!-- begin LEARNING -->
       <h1 class="text-center" id="callout">What I'm Learning</h1>
@@ -11,12 +11,12 @@
 
       <% current_user.enrolled_courses.each do |course| %>
 
-        <h2 class="text-center">
+        <h2 class="course-title text-center">
           <%= link_to course.title, course_path(course) %>
         </h2>
-        <%= image_tag course.image, class: 'img-responsive' %>
+        <%= image_tag course.image, class: 'img-responsive courseimg' %>
         <br />
-        <div class="col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12 course-desc">
           <%= course.description %>
         </div>
         <div class="col-sm-4 col-xs-12 text-center">
@@ -37,12 +37,12 @@
 
       <% current_user.courses.each do |course| %>
 
-        <h2 class="text-center">
+        <h2 class="course-title text-center">
           <%= link_to course.title, course_path(course) %>
         </h2>
-        <%= image_tag course.image, class: 'img-responsive' %>
+        <%= image_tag course.image, class: 'img-responsive courseimg' %>
         <br />
-        <div class="col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12 course-desc">
           <%= course.description %>
         </div>
         <div class="col-sm-4 col-xs-12 text-center">

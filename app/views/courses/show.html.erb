@@ -4,13 +4,13 @@
 
       <div class="col-xs-12 text-center">
         <h1><%= @course.title %></h1>
-        <%= image_tag @course.image, class: 'img-responsive' %>
+        <%= image_tag @course.image, class: 'img-responsive courseimg' %>
 
         <br />
       </div>
 
       <div class="col-sm-4 col-xs-12 text-center">
-        <span class="label label-default">
+        <span class="label label-default cost">
           <%= number_to_currency @course.cost %>
         </span>
 
@@ -18,7 +18,7 @@
         <br />
         
         <% if current_user && current_user.enrolled_in?(@course) %>
-          <h3 class="label label-info">You are Enrolled!</h3>
+          <h3 class="label label-success cost">You are Enrolled!</h3>
         <% else %>
           <% if @course.free? %>
             <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-pink', method: :post %>
@@ -49,7 +49,7 @@
         <br />
 
         <% if current_user && current_user == @course.user %>
-          <br /><br />
+          <br />
           <%= link_to 'Administer this Course', instructor_course_path(@course), class: 'btn btn-yellow btn-large' %>
         <% end %>
 
@@ -64,9 +64,6 @@
 
 
       <div class="col-xs-12">      
-        <hr />
-
-        <h2>Get Coding Buddy</h2>
 
         <% @course.sections.rank(:row_order).each do |section| %>
           <div class="col-xs-12 section">

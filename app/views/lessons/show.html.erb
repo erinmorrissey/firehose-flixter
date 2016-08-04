@@ -3,10 +3,10 @@
     <div class="main-box">
 
       <h1><%= current_lesson.title %></h1>
-      <h2 class="pull-left"><%= current_lesson.subtitle %></h2>
+      <h3 class="sectiontitle pull-left"><%= current_lesson.subtitle %></h3>
 
       <% if current_lesson.next_lesson.present? %>
-        <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default pull-right' do %>
+        <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default pull-right btn-lesson' do %>
           Next Lesson&nbsp;
           <span class="glyphicon glyphicon-forward"></span>
         <% end %>
