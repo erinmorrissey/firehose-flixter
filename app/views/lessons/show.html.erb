@@ -3,7 +3,14 @@
     <div class="main-box">
 
       <h1><%= current_lesson.title %></h1>
-      <h2><%= current_lesson.subtitle %></h2>
+      <h2 class="pull-left"><%= current_lesson.subtitle %></h2>
+
+      <% if current_lesson.next_lesson.present? %>
+        <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default pull-right' do %>
+          Next Lesson&nbsp;
+          <span class="glyphicon glyphicon-forward"></span>
+        <% end %>
+      <% end %>
 
       <div class="col-xs-12 text-center">
         <video id="video-embed" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls preload="auto" width="auto" height="auto"
