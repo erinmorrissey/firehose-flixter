@@ -8,7 +8,7 @@
 
 
 /* VARIABLES */
-$footer-height: 150px;
+$footer-height: 175px;
 
 
 
@@ -45,8 +45,45 @@ body {
   background-color: #f5f5f5;
 }
 
+.footercontainer h6 {
+  color:#D29093;
+  margin-bottom:12px;
+  text-transform: uppercase;
+  letter-spacing:0.5px;
+}
+
 .footercontainer ul {
   padding-bottom:30px;
+  padding-left:0;
+}
+
+.footercontainer ul li {
+  list-style-type: none;
+  margin-bottom:4px;
+}
+
+.footercontainer ul li a {
+  color:#666666;
+}
+
+.footercontainer ul li a:hover {
+  color:#D29093;
+}
+
+#social-buttons li {
+  float:left;
+  margin:0 15px 0 0;
+  padding:4px;
+  width: 40px;
+  height: 40px;
+  background: #F4DCDD;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+#social-buttons li:hover {
+  background-color:#D29093;
 }
 
 .alert {

@@ -68,28 +68,35 @@
           <h6>Instructors</h6>
           <ul>
             <li><%= link_to 'Teach a Course', new_instructor_course_path %></li>
-            <li>link 2</li>
+            <li><%= link_to 'View Dashboard', dashboard_path %></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h6>About</h6>
           <ul>
-            <li>link 1</li>
-            <li>link 2</li>
+            <li><%= link_to 'Team', "#" %></li>
+            <li><%= link_to 'Careers', "#" %></li>
+            <li><%= link_to 'Privacy Policy', "#" %></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h6>Contact</h6>
           <ul>
-            <li>link 1</li>
-            <li>link 2</li>
+            <li>email@email.com</li>
           </ul>
         </div>
         <div class="col-md-3">
           <h6>Social</h6>
-          <ul>
-            <li>link 1</li>
-            <li>link 2</li>
+          <ul id="social-buttons">
+            <li><%= link_to '#' do %>
+              <%= image_tag 'icon_facebook.png' %>
+            <% end %></li>
+            <li><%= link_to '#' do %>
+              <%= image_tag 'icon_instagram.png' %>
+            <% end %></li>
+            <li><%= link_to '#' do %>
+              <%= image_tag 'icon_pinterest.png' %>
+            <% end %></li>
           </ul>
         </div>
       </div>
