@@ -10,6 +10,9 @@ class Instructor::CoursesController < ApplicationController
     @section = Section.new
     #    ^ added when decided to move the new section form into a modal window
     #      on the instructor/courses#show page
+    @lesson = Lesson.new
+    #    ^ added when decided to move the new lesson form into a modal window
+    #      on the instructor/courses#show page
   end
 
   def new

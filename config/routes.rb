@@ -78,7 +78,7 @@ Flixter::Application.routes.draw do
     # the course_id, which now prevents a user from adding lessons 
     # to a mismatched course & section via the URL pattern
     resources :sections, only: [] do
-      resources :lessons, only: [:new, :create]
+      resources :lessons, only: [:create]
     end
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:create]

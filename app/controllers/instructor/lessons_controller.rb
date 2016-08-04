@@ -3,7 +3,7 @@ class Instructor::LessonsController < ApplicationController
   # ensures user is a logged-in user before running any actions
   before_action :authenticate_user!
   # triggers private methods defined below
-  before_action :require_authorization_for_current_section, only: [:new, :create]
+  before_action :require_authorization_for_current_section, only: [:create]
   before_action :require_authorization_for_current_lesson, only: [:update]
 
   def new
@@ -18,7 +18,10 @@ class Instructor::LessonsController < ApplicationController
     #      we can remove this explicit first step
     # second
     # build a new empty lesson to give the form a template object
-    @lesson = Lesson.new
+    #@lesson = Lesson.new
+    #    ^ removed after we moved the form for creating a new lesson into a modal window
+    #      on the instructor/courses#show page, then removed the route that gave us an 
+    #      instructor/lessons#new page
   end
 
   def create
